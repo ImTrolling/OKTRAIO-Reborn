@@ -34,13 +34,13 @@ namespace OKTR.Plugin
 
         public static void Initialize()
         {
-            Console.WriteLine("Loading OKTR Core....");
+            Console.WriteLine(@"Loading OKTR Core....");
             OKTR_Core.InitCore();
-            Console.WriteLine("Loaded OKTR Core!");
+            Console.WriteLine(@"Loaded OKTR Core!");
             Console.WriteLine("");
-            Console.WriteLine("Loading {0} Plugins....", Plugins.Count);
+            Console.WriteLine(@"Loading {0} Plugins....", Plugins.Count);
             Plugins.ForEach(LoadPlugin);
-            Console.WriteLine("Loaded All Plugins!");
+            Console.WriteLine(@"Loaded All Plugins!");
         }
 
         private static void LoadPlugin(PluginBase pluginBase)
@@ -48,12 +48,12 @@ namespace OKTR.Plugin
             var attribute = pluginBase.GetAttribute();
             if (attribute != null)
             {
-               Console.WriteLine("Found Plugin: {0}", pluginBase.GetType().Name);
+               Console.WriteLine(@"Found Plugin: {0}", pluginBase.GetType().Name);
                 if (attribute.SupportedChampions.Contains(Player.Instance.Hero))
                 {
                     if (Plugins.Count(x => x.GetAttribute().SupportedChampions.Contains(Player.Instance.Hero)) > 1)
                     {
-                        Console.WriteLine("Many Plugin found for current champion, returning for now");
+                        Console.WriteLine(@"Many Plugin found for current champion, returning for now");
                         //TODO: Plugin Selector
                         return;
                     }  

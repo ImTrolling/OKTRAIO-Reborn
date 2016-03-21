@@ -18,7 +18,7 @@ namespace OKTR.Plugin
         public Slider AlphaSlider { get; set; }
         private ColorPickerControl ColorPicker { get; set; }
 
-        public string Id { get; }
+        public string Id { get; private set; }
         private static Menu _menu;
 
         public ColorSlider(Menu menu, string id, Color color, string GropuLabelName)
@@ -100,27 +100,29 @@ namespace OKTR.Plugin
         }
         private class ColorPickerControl : ValueBase<Color>
         {
+            private readonly string _name;
             private Vector2 _offset;
             private Color SelectedColor { get; set; }
 
+            private Sprite _colorPickerSprite;
             private Sprite _colorOverlaySprite;
             private TextureLoader _textureLoader;
 
-            public override string VisibleName { get; }
+            public override string VisibleName { get { return _name; } }
             public override Vector2 Offset { get { return _offset; } }
 
             public ColorPickerControl(string uId, Color defaultValue) : base(uId, "", 52)
             {
-                VisibleName = "";
+                _name = "";
                 Init(defaultValue);
             }
 
             private static Bitmap ContructColorOverlaySprite()
             {
                 var bitmap = new Bitmap(30, 30);
-                for (var x = 0; x < 30; x++)
+                for (int x = 0; x < 30; x++)
                 {
-                    for (var y = 0; y < 30; y++)
+                    for (int y = 0; y < 30; y++)
                     {
                         bitmap.SetPixel(x, y, Color.White);
                     }
@@ -136,6 +138,7 @@ namespace OKTR.Plugin
             {
                 _offset = new Vector2(0, 10);
                 _textureLoader = new TextureLoader();
+                _colorPickerSprite = new Sprite(_textureLoader.Load("ColorPickerSprite", Resource.ColorPickerSprite));
                 _colorOverlaySprite = new Sprite(_textureLoader.Load("ColorOverlaySprite", ContructColorOverlaySprite()));
                 SelectedColor = color;
             }
@@ -147,6 +150,7 @@ namespace OKTR.Plugin
                 var rect = new SharpDX.Rectangle((int)MainMenu.Position.X + 160, (int)MainMenu.Position.Y + 95 + 50, 750, 380);
                 if (MainMenu.IsVisible && IsVisible && rect.IsInside(Position))
                 {
+                    _colorPickerSprite.Draw(new Vector2(Position.X + 522, Position.Y - 34));
                     _colorOverlaySprite.Color = SelectedColor;
                     _colorOverlaySprite.Draw(new Vector2(Position.X + 522 + 1, Position.Y - 34 + 1));
                     return true;
@@ -154,7 +158,6 @@ namespace OKTR.Plugin
                 return false;
             }
 
-            // ReSharper disable once RedundantOverridenMember
             public override Dictionary<string, object> Serialize()
             {
                 return base.Serialize();

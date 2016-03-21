@@ -42,6 +42,9 @@ namespace OKTR.Plugin
         public TSpellW W;
         public TSpellE E;
         public TSpellR R;
+        /// <summary>
+        /// If it is false it will disable the creation of the mana sliders
+        /// </summary>
         public bool PlayerHasMana = true;
         //Damage type
         public DamageType DamageType;
@@ -50,13 +53,24 @@ namespace OKTR.Plugin
         public abstract void InitializeEvents();
         public abstract void InitializeMenu();
 
+        public bool HUEHUEHUEHUE = true;
+
+        public ColorSlider QDrawColor;
+        public ColorSlider WDrawColor;
+        public ColorSlider EDrawColor;
+        public ColorSlider RDrawColor;
+        public ColorSlider DamageIndicatorDrawColor;
+
         public override void Initialize()
         {
             FirstMenu = MainMenu.AddMenu("OKTR " + GetAttribute().Name, "id" + GetAttribute().Name.ToLower());
             FirstMenu.AddGroupLabel("Introduction:");
             FirstMenu.AddSeparator();
             FirstMenu.AddGroupLabel("Author: " + GetAttribute().Author);
-            FirstMenu.AddLabel("Plugin From: http://oktraio.com");
+            if (HUEHUEHUEHUE)
+            {
+                FirstMenu.AddLabel("Plugin From: http://oktraio.com");
+            }
             ComboMenu = FirstMenu.AddSubMenu("Combo", ComboMenuID);
             ComboMenu.AddGroupLabel("Combo Settings:");
             HarassMenu = FirstMenu.AddSubMenu("Harass", HarassMenuID);
@@ -74,19 +88,22 @@ namespace OKTR.Plugin
             KillStealMenu = FirstMenu.AddSubMenu("Killsteal", KillstealMenuID);
             KillStealMenu.AddGroupLabel("Killsteal Settings:");
             DrawMenu = FirstMenu.AddSubMenu("Draw", DrawMenuID);
+            DrawMenu.AddGroupLabel("Draw Settings:");
             DrawMenu.CreateCheckBox("Only draw spells if they are ready", DrawMenuID + "whenready");
             DrawMenu.AddGroupLabel("Damage Indicator settings: ");
             DrawMenu.CreateCheckBox("Draw damage indicator", DrawMenuID + "damageDraw");
             DrawMenu.CreateCheckBox("Draw statistics", DrawMenuID + "statDraw");
             DrawMenu.CreateCheckBox("Draw percentage", DrawMenuID + "perDraw");
-            // ReSharper disable once ObjectCreationAsStatement
-            new ColorSlider(DrawMenu, DrawMenuID + "damageHealthIndicator", Color.Yellow, "Damage Indicator Color");
+
+            DamageIndicatorDrawColor = new ColorSlider(DrawMenu, DrawMenuID + "damageHealthIndicator", Color.Yellow, "Damage Indicator Color");
+
             DrawMenu.AddSeparator();
             DrawMenu.CreateCheckBox("Calculate Q", DrawMenuID + "calculateQ");
             DrawMenu.CreateCheckBox("Calculate W", DrawMenuID + "calculateW");
             DrawMenu.CreateCheckBox("Calculate E", DrawMenuID + "calculateE");
             DrawMenu.CreateCheckBox("Calculate R", DrawMenuID + "calculateR");
-            DrawMenu.AddGroupLabel("Draw Settings:");
+            DrawMenu.AddGroupLabel("Spells to draw: ");
+
             MiscMenu = FirstMenu.AddSubMenu("Misc", MiscMenuID);
             MiscMenu.AddGroupLabel("Miscellanous Settings:");
 
@@ -104,6 +121,12 @@ namespace OKTR.Plugin
                 KillStealMenu.CreateSlider("Player mana must be less than [{0}%] to use Killsteal spells", KillstealMenuID + "mana", 10);
                 MiscMenu.CreateSlider("Player mana must be less than [{0}%] to use misc spells", MiscMenuID + "mana", 30);
             }
+
+            DrawMenu.AddGroupLabel("Drawing Colors");
+            QDrawColor = new ColorSlider(DrawMenu, DrawMenuID + "Q" + "colorid", Color.Orange, "- Q Color");
+            WDrawColor = new ColorSlider(DrawMenu, DrawMenuID + "W" + "colorid", Color.Red, "- W Color");
+            EDrawColor = new ColorSlider(DrawMenu, DrawMenuID + "E" + "colorid", Color.Blue, "- E Color");
+            RDrawColor = new ColorSlider(DrawMenu, DrawMenuID + "R" + "colorid", Color.DeepPink, "- R Color");
 
             Game.OnTick += Game_OnTick;
 
@@ -289,8 +312,6 @@ namespace OKTR.Plugin
                         break;
                     case DrawMenuID:
                         DrawMenu.CreateCheckBox("- Draw " + spellSlot, DrawMenuID + spellSlot, m.DefaultValue);
-                        // ReSharper disable once ObjectCreationAsStatement
-                        new ColorSlider(DrawMenu, DrawMenuID + spellSlot + "colorid", Color.White, "- " + spellSlot + " Color");
                         break;
                 }
             }

@@ -7,7 +7,6 @@ using EloBuddy.SDK.Enumerations;
 using EloBuddy.SDK.Menu;
 using EloBuddy.SDK.Menu.Values;
 using SharpDX;
-using static OKTR.Plugin.OKTR_Core;
 
 namespace OKTR.Plugin
 {
@@ -114,7 +113,7 @@ namespace OKTR.Plugin
             {
                 var spellSlot = spell.Slot.ToString()[spell.Slot.ToString().Length - 1];
                 if (target.CanCast(spell) &&
-                    !OKTRSpellTargetSelectorMenu.GetCheckBoxValue(OKTRSpellTargetSelectorMenuID + spellSlot + target.BaseSkinName))
+                    !OKTR_Core.OKTRSpellTargetSelectorMenu.GetCheckBoxValue(OKTR_Core.OKTRSpellTargetSelectorMenuID + spellSlot + target.BaseSkinName))
                 {
                     return spell.Cast(target);
                 }
