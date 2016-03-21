@@ -1,0 +1,12 @@
+C:\Users\iRaxe\Source\Repos\OKTR.AIO2\OKTR.AIO\OKTR.Plugin\bin\Debug\OKTR.Plugin.dll
+C:\Users\iRaxe\Source\Repos\OKTR.AIO2\OKTR.AIO\OKTR.Plugin\bin\Debug\OKTR.Plugin.pdb
+C:\Users\iRaxe\Source\Repos\OKTR.AIO2\OKTR.AIO\OKTR.Plugin\bin\Debug\EloBuddy.dll
+C:\Users\iRaxe\Source\Repos\OKTR.AIO2\OKTR.AIO\OKTR.Plugin\bin\Debug\EloBuddy.Sandbox.dll
+C:\Users\iRaxe\Source\Repos\OKTR.AIO2\OKTR.AIO\OKTR.Plugin\bin\Debug\EloBuddy.SDK.dll
+C:\Users\iRaxe\Source\Repos\OKTR.AIO2\OKTR.AIO\OKTR.Plugin\bin\Debug\Newtonsoft.Json.dll
+C:\Users\iRaxe\Source\Repos\OKTR.AIO2\OKTR.AIO\OKTR.Plugin\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\iRaxe\Source\Repos\OKTR.AIO2\OKTR.AIO\OKTR.Plugin\bin\Debug\SharpDX.dll
+C:\Users\iRaxe\Source\Repos\OKTR.AIO2\OKTR.AIO\OKTR.Plugin\bin\Debug\SharpDX.XInput.dll
+C:\Users\iRaxe\Source\Repos\OKTR.AIO2\OKTR.AIO\OKTR.Plugin\obj\Debug\OKTR.Plugin.csprojResolveAssemblyReference.cache
+C:\Users\iRaxe\Source\Repos\OKTR.AIO2\OKTR.AIO\OKTR.Plugin\obj\Debug\OKTR.Plugin.dll
+C:\Users\iRaxe\Source\Repos\OKTR.AIO2\OKTR.AIO\OKTR.Plugin\obj\Debug\OKTR.Plugin.pdb
