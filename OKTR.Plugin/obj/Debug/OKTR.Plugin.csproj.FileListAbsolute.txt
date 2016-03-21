@@ -12,3 +12,17 @@ C:\Users\Mario\Desktop\OKTR\OKTR.AIO\OKTR.AIO\OKTR.Plugin\obj\Debug\OKTR.Plugin.
 C:\Users\Mario\Desktop\OKTR\OKTR.AIO\OKTR.AIO\OKTR.Plugin\obj\Debug\OKTR.Plugin.csproj.GenerateResource.Cache
 C:\Users\Mario\Desktop\OKTR\OKTR.AIO\OKTR.AIO\OKTR.Plugin\obj\Debug\OKTR.Plugin.dll
 C:\Users\Mario\Desktop\OKTR\OKTR.AIO\OKTR.AIO\OKTR.Plugin\obj\Debug\OKTR.Plugin.pdb
+C:\Users\Mario\Documents\GitHub\OKTRAIO-Reborn\OKTR.Plugin\bin\Debug\OKTR.Plugin.dll
+C:\Users\Mario\Documents\GitHub\OKTRAIO-Reborn\OKTR.Plugin\bin\Debug\OKTR.Plugin.pdb
+C:\Users\Mario\Documents\GitHub\OKTRAIO-Reborn\OKTR.Plugin\bin\Debug\EloBuddy.dll
+C:\Users\Mario\Documents\GitHub\OKTRAIO-Reborn\OKTR.Plugin\bin\Debug\EloBuddy.Sandbox.dll
+C:\Users\Mario\Documents\GitHub\OKTRAIO-Reborn\OKTR.Plugin\bin\Debug\EloBuddy.SDK.dll
+C:\Users\Mario\Documents\GitHub\OKTRAIO-Reborn\OKTR.Plugin\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mario\Documents\GitHub\OKTRAIO-Reborn\OKTR.Plugin\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Mario\Documents\GitHub\OKTRAIO-Reborn\OKTR.Plugin\bin\Debug\SharpDX.dll
+C:\Users\Mario\Documents\GitHub\OKTRAIO-Reborn\OKTR.Plugin\bin\Debug\SharpDX.XInput.dll
+C:\Users\Mario\Documents\GitHub\OKTRAIO-Reborn\OKTR.Plugin\obj\Debug\OKTR.Plugin.csprojResolveAssemblyReference.cache
+C:\Users\Mario\Documents\GitHub\OKTRAIO-Reborn\OKTR.Plugin\obj\Debug\OKTR.Plugin.Resource.resources
+C:\Users\Mario\Documents\GitHub\OKTRAIO-Reborn\OKTR.Plugin\obj\Debug\OKTR.Plugin.csproj.GenerateResource.Cache
+C:\Users\Mario\Documents\GitHub\OKTRAIO-Reborn\OKTR.Plugin\obj\Debug\OKTR.Plugin.dll
+C:\Users\Mario\Documents\GitHub\OKTRAIO-Reborn\OKTR.Plugin\obj\Debug\OKTR.Plugin.pdb

@@ -1,4 +1,5 @@
 using OKTR.Plugin;
+
 namespace OKTR.AIO.Aatrox
 {
     class Program
@@ -8,5 +9,4 @@ namespace OKTR.AIO.Aatrox
             new Aatrox().RegisterPlugin();
         }
     }
-
 }
